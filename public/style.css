@@ -7,6 +7,7 @@
     text-transform: uppercase;
 }
 body {
+    margin: 5rem 0;
     background-color: #076324;
     padding: 10px 30px;
 }
