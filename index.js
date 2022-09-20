@@ -38,6 +38,11 @@ app.get('/', (req, res) => {
 	res.render('home')
 })
 
+//POKER ROUTE
+app.get('/poker', (req, res) => {
+	res.render('poker')
+})
+
 //GET DECK OF CARDS
 app.post('/blackjack', (req, res, next) => {
 
@@ -84,6 +89,7 @@ app.post('/blackjack', (req, res) => {
 			let newCards = JSON.parse(body)
 			// Got the cards now updating the values
 			let updatedNewCards = updateValue(newCards.cards)
+		
 			// Need to deal cards - pass the cards and the gameData object
 			dealCards(updatedNewCards, gameData)
 			console.log(` in route DEALER TOTAL: ${gameData.dealerValue}`)
@@ -98,8 +104,15 @@ app.post('/blackjack', (req, res) => {
 
 //DISPLAYS BLACKJACK PAGE W/ DATA RECEIVED
 app.get('/blackjack', (req, res) => {
+
 	// Pull the arrays out of the object to render
 	const { player, dealer } = gameData
+
+	// Logic when getting Ace on deal
+	console.log(gameData.playerValue)
+	if (gameData.playerValue < 12 && gameData.player.filter(e => e.value === 1).length > 0) {
+		gameData.playerValue += 10;
+	}
 	res.render('blackjack', { player, dealer })
 })
 
@@ -121,9 +134,13 @@ app.post('/hit', (req, res) => {
 		// Add the value of the card to the player total value of cards
 		gameData.playerValue += hitCard.value;
 
-		//console.log("CURRENT DEALER HAND: ", dealer)
-		//console.log("CURRENT PLAYER HAND: ", player)
+		//console.log("CURRENT DEALER HAND: ", gameData.dealer)
+		console.log("CURRENT PLAYER HAND: ", gameData.player)
 
+		// Logic when getting Ace on hit
+		if (gameData.playerValue < 12 && gameData.player.filter(e => e.value === 1).length > 0) {
+			gameData.playerValue += 10;
+		}
 
 		// Logic to check if there is a winner
 		if (gameData.playerValue >= 22) {

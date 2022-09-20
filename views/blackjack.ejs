@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Blackjack</title>
 </head>
 <body>
-    
-    <h1>Blackjack</h1>
     <div class="container">
+        <div class="title">
+            <h1>Blackjack</h1>
+        </div>
+
 
         <h2>Dealer Hand</h2>
 
@@ -32,14 +34,14 @@
             <% }) %>
         </div>
 
-    <div class="buttons">
-        <form action="/hit" method="POST">
-            <button value="hit">Hit</button>
-        </form>
-        <form action="/stay" method="POST">
-            <button value="stay">Stay</button>
-        </form>
+        <div class="buttons">
+            <form action="/hit" method="POST">
+                <button value="hit">Hit</button>
+            </form>
+            <form action="/stay" method="POST">
+                <button value="stay">Stay</button>
+            </form>
+        </div>
     </div>
-
 </body>
 </html>

@@ -32,7 +32,7 @@ const updateValue = (arr) =>{
                 card.value = 10
                 break
             case "ACE":
-                card.value = 11
+                card.value = 1
                 break
             default:
                 card.value = Number(card.value)

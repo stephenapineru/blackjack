@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Results</title>
 </head>
 <body>
-    
-    <h1>Blackjack</h1>
     <div class="container">
+        <div class="title">
+            <h1>Blackjack</h1>
+        </div>
 
         <h2>Dealer Hand</h2>
 
@@ -35,16 +36,16 @@
     </div>
 
         <% if(playerValue >= 22){ %>
-        <h1>You bust with <%= playerValue %>! Dealer wins.</h1>
+        <h2>You bust with <%= playerValue %>! Dealer wins.</h2>
         <% } else if(dealerValue >= 22){ %>
-        <h1>The Dealer busts with <%= dealerValue %>! You win.</h1>
+        <h2>The Dealer busts with <%= dealerValue %>! You win.</h2>
         <% } else if(playerValue == dealerValue){ %>
-        <h1>You both tie with <%= playerValue %>! Nobody wins.</h1>
+        <h2>You both tie with <%= playerValue %>! Nobody wins.</h2>
         <% } else if(playerValue > dealerValue){ %>
-        <h1>You won with <%= playerValue %>!</h1>
+        <h2>You won with <%= playerValue %>!</h2>
         <% } else if(playerValue < dealerValue){ %>
-        <h1>Dealer wins with <%= dealerValue %>!</h1>
+        <h2>Dealer wins with <%= dealerValue %>!</h2>
         <% } %>
-
+    </div>
 </body>
 </html>

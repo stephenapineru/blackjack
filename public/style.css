@@ -6,13 +6,19 @@
     color: white;
     text-transform: uppercase;
 }
-body {
-    margin: 5rem 0;
+html{
+    min-height: -webkit-fill-available;
     background-color: #076324;
-    padding: 10px 30px;
+}
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+.title > * {
+    margin-bottom: 3rem;
 }
 .container {
-    margin: 50px auto;
+    margin-top: 4rem;
 }
 .hand {
     height: 200px;
@@ -20,21 +26,25 @@ body {
     justify-content: center;
     margin-bottom: 10px;
 }
-h1, h2 {
+h1 {
+    font-size: 3rem;
     text-align: center;
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.473);
 }
 h2, #playerHand {
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.473);
     margin-bottom: 8px;
 }
 img {
-    margin: 0 3px;
+    margin: 0 .5rem;
     box-shadow: rgba(0, 0, 0, 0.288) 0px 15px 25px, rgba(0, 0, 0, 0.274) 0px 5px 10px;
     border-radius: 8px;
 }
 
 button {
-    margin: 30px;
+    margin: 1rem;
 	box-shadow:inset 0px 1px 0px 0px #caefab;
 	background:linear-gradient(to bottom, #77d42a 5%, #72db1c 100%);
 	background-color:#77d42a;
@@ -62,7 +72,6 @@ button:active {
 }
 
 .buttons {
-    margin: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
