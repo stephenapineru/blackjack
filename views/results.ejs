@@ -14,38 +14,38 @@
         </div>
 
         <h2>Dealer Hand</h2>
+        <div class="hand-container">
+            <div id="dealerHand" class="hand">
+                <% dealer.forEach(card =>{ %>
+                    <img src="<%= card.image %>" alt="<%= card.suit %><%= card.value%>">
+                <% }) %>
+            </div>
 
-        <div id="dealerHand" class="hand">
-            <% dealer.forEach(card =>{ %>
-                <img src="<%= card.image %>" alt="<%= card.suit %><%= card.value%>">
-            <% }) %>
+            <h2>Player Hand</h2>
+
+            <div id="playerHand" class="hand">
+                <% player.forEach(card =>{ %>
+                    <img src="<%= card.image %>" alt="<%= card.suit %><%= card.value%>">
+                <% }) %>
+            </div>
+        </div>
+        <div class="buttons">
+            <form action="/blackjack" method="POST">
+                <button>Play Again</button>
+            </form>
         </div>
 
-        <h2>Player Hand</h2>
-
-        <div id="playerHand" class="hand">
-            <% player.forEach(card =>{ %>
-                <img src="<%= card.image %>" alt="<%= card.suit %><%= card.value%>">
-            <% }) %>
-        </div>
-
-    <div class="buttons">
-        <form action="/blackjack" method="POST">
-            <button>Play Again</button>
-        </form>
-    </div>
-
-        <% if(playerValue >= 22){ %>
-        <h2>You bust with <%= playerValue %>! Dealer wins.</h2>
-        <% } else if(dealerValue >= 22){ %>
-        <h2>The Dealer busts with <%= dealerValue %>! You win.</h2>
-        <% } else if(playerValue == dealerValue){ %>
-        <h2>You both tie with <%= playerValue %>! Nobody wins.</h2>
-        <% } else if(playerValue > dealerValue){ %>
-        <h2>You won with <%= playerValue %>!</h2>
-        <% } else if(playerValue < dealerValue){ %>
-        <h2>Dealer wins with <%= dealerValue %>!</h2>
-        <% } %>
+            <% if(playerValue >= 22){ %>
+            <h2 class="results">You bust with <%= playerValue %>! Dealer wins.</h2>
+            <% } else if(dealerValue >= 22){ %>
+            <h2 class="results">The Dealer busts with <%= dealerValue %>! You win.</h2>
+            <% } else if(playerValue == dealerValue){ %>
+            <h2 class="results">You both tie with <%= playerValue %>! Nobody wins.</h2>
+            <% } else if(playerValue > dealerValue){ %>
+            <h2 class="results">You won with <%= playerValue %>!</h2>
+            <% } else if(playerValue < dealerValue){ %>
+            <h2 class="results">Dealer wins with <%= dealerValue %>!</h2>
+            <% } %>
     </div>
 </body>
 </html>
