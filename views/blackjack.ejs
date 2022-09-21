@@ -15,25 +15,25 @@
 
         <div class="hand-container">
             <h2>Dealer Hand</h2>
+            <div class="hand-container">
+                <div id="dealerHand" class="hand">
+                    <% dealer.forEach((card, index) =>{ %>
+                        <% if (index == 0) { %>
+                            <img src="https://blog.betvictor.com/campaigns/the-art-of-playing-cards/assets/img/og_card_5@2x.png" alt="">
+                        <% } else { %> 
+                            <img src="<%= card.image %>" alt="<%= card.suit %><%= card.value%>">
+                    <%  } %>
+                    <% }) %>
+                </div>
 
-            <div id="dealerHand" class="hand">
-                <% dealer.forEach((card, index) =>{ %>
-                    <% if (index == 0) { %>
-                        <img src="https://blog.betvictor.com/campaigns/the-art-of-playing-cards/assets/img/og_card_5@2x.png" alt="">
-                    <% } else { %> 
+                <h2>Player Hand</h2>
+
+                <div id="playerHand" class="hand">
+                    <% player.forEach(card =>{ %>
                         <img src="<%= card.image %>" alt="<%= card.suit %><%= card.value%>">
-                <%  } %>
-                <% }) %>
+                    <% }) %>
+                </div>
             </div>
-
-            <h2>Player Hand</h2>
-
-            <div id="playerHand" class="hand">
-                <% player.forEach(card =>{ %>
-                    <img src="<%= card.image %>" alt="<%= card.suit %><%= card.value%>">
-                <% }) %>
-            </div>
-
             <div class="buttons">
                 <form action="/hit" method="POST">
                     <button value="hit">Hit</button>

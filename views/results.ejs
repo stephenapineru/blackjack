@@ -13,8 +13,8 @@
             <h1>Blackjack</h1>
         </div>
 
-        <h2>Dealer Hand</h2>
-        <div class="hand-container">
+        <div class="hand-container"></div>
+          <h2>Dealer Hand</h2>
             <div id="dealerHand" class="hand">
                 <% dealer.forEach(card =>{ %>
                     <img src="<%= card.image %>" alt="<%= card.suit %><%= card.value%>">
